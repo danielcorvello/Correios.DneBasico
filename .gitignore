@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Ignora os arquivos TXT de importação de endereços
+/src/Correios.DneBasico.Importer/Arquivos/*.TXT

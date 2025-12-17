@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Correios.DneBasico.Importer": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

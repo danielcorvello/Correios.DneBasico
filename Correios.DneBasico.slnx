@@ -1,6 +1,13 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/Correios.DneBasico.Data/Correios.DneBasico.Data.csproj" />
     <Project Path="src/Correios.DneBasico.Domain/Correios.DneBasico.Domain.csproj" />
+    <Project Path="src/Correios.DneBasico.Importer/Correios.DneBasico.Importer.csproj" />
   </Folder>
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
 </Solution>

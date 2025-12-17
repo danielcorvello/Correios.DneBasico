@@ -1,0 +1,46 @@
+services:
+  correios.dnebasico.importer:
+    container_name: ednebasico.importer
+    image: ${DOCKER_REGISTRY-}correiosdnebasicoimporter
+    build:
+      context: .
+      dockerfile: src/Correios.DneBasico.Importer/Dockerfile
+    depends_on:
+      - postgres
+    networks:
+      - pg_network
+    environment:
+      - ConnectionStrings__eDNE=Host=postgres;Port=5432;Database=dnebasico;Username=edne;Password=edne
+
+  postgres:
+    image: postgres:15
+    container_name: ednebasico_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: edne
+      POSTGRES_PASSWORD: edne
+      POSTGRES_DB: ednebasico
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - pg_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: ednebasico_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: edne@example.com
+      PGADMIN_DEFAULT_PASSWORD: edne
+    ports:
+      - "8080:80"
+    networks:
+      - pg_network
+
+networks:
+  pg_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
