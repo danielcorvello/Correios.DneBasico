@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Correios.DneBasico.Data/Correios.DneBasico.Data.csproj" />
+    <Project Path="src/Correios.DneBasico.Domain/Correios.DneBasico.Domain.csproj" />
+  </Folder>
+</Solution>
