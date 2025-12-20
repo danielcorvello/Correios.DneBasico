@@ -76,5 +76,10 @@ public class Logradouro
     /// Variações do Logradouro
     /// </summary>
     public ICollection<VariacaoLogradouro> Variacoes { get; set; } = [];
+
+    /// <summary>
+    /// Faixas Numéricas de Seccionamento
+    /// </summary>
+    public ICollection<FaixaNumericaSeccionamento> FaixasNumericasSeccionamento { get; set; } = [];
     #endregion
 }

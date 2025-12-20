@@ -1,4 +1,6 @@
-﻿namespace Correios.DneBasico.Domain.Entities;
+﻿using System.Text.Json.Serialization;
+
+namespace Correios.DneBasico.Domain.Entities;
 
 /// <summary>
 /// Faixa de CEP do Estado
@@ -24,6 +26,7 @@ public class FaixaCepEstado
     /// <summary>
     /// Unidade Federativa (Estado)
     /// </summary>
+    [JsonIgnore]
     public Estado Estado { get; set; } = default!;
     #endregion
 }

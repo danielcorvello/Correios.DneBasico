@@ -8,12 +8,12 @@ namespace Correios.DneBasico.Domain.Entities;
 public class VariacaoLocalidade
 {
     /// <summary>
-    /// chave da localidade
+    /// Chave da localidade
     /// </summary>
     public int LocalidadeId { get; set; }
 
     /// <summary>
-    /// ordem da denominação
+    /// Ordem da denominação
     /// </summary>
     public int Ordem { get; set; }
 

@@ -40,5 +40,10 @@ public class Bairro
     /// Variações do Bairro
     /// </summary>
     public ICollection<VariacaoBairro> Variacoes { get; set; } = [];
+
+    /// <summary>
+    /// Faixas de CEP do Bairro
+    /// </summary>
+    public ICollection<FaixaCepBairro> Faixas { get; set; } = [];
     #endregion
 }

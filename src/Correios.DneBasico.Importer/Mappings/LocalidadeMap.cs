@@ -15,7 +15,7 @@ public class LocalidadeMap : ClassMap<Localidade>
         Map(m => m.Tipo)
             .TypeConverter<TipoLocalidadeConverter>()
             .Index(5);
-        Map(m => m.SubordinadaId).Index(6);
+        Map(m => m.SubordinacaoId).Index(6);
         Map(m => m.NomeAbreviado).Index(7);
         Map(m => m.Ibge)
             .TypeConverterOption

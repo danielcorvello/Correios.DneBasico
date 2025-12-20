@@ -19,4 +19,11 @@ public class Estado
     /// Código IBGE do Estado
     /// </summary>    
     public string Ibge { get; set; } = default!;
+
+    #region Navigation Properties
+    /// <summary>
+    /// Faixas de CEP do Estado
+    /// </summary>
+    public ICollection<FaixaCepEstado> Faixas { get; set; } = [];
+    #endregion
 }

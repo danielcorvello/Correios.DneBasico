@@ -8,17 +8,17 @@ namespace Correios.DneBasico.Domain.Entities;
 public class FaixaCaixaPostalUop
 {
     /// <summary>
-    /// chave da UOP
+    /// Chave da UOP
     /// </summary>
     public int UnidadeOperacionalId { get; set; }
 
     /// <summary>
-    /// número inicial da caixa postal
+    /// Número inicial da caixa postal
     /// </summary>
     public string CaixaPostalInicial { get; set; } = default!;
 
     /// <summary>
-    /// número final da caixa postal
+    /// Número final da caixa postal
     /// </summary>
     public string CaixaPostalFinal { get; set; } = default!;
 

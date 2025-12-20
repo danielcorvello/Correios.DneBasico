@@ -14,7 +14,7 @@ public class FaixaCepEstadoConfiguration : IEntityTypeConfiguration<FaixaCepEsta
             .HasMaxLength(2);
 
         builder.HasOne(l => l.Estado)
-            .WithMany()
+            .WithMany(l => l.Faixas)
             .HasForeignKey(l => l.Uf)
             .OnDelete(DeleteBehavior.Restrict);
 

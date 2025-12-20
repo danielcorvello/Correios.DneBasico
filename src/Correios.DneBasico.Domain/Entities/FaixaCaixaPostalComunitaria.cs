@@ -8,17 +8,17 @@ namespace Correios.DneBasico.Domain.Entities;
 public class FaixaCaixaPostalComunitaria
 {
     /// <summary>
-    /// chave da caixa postal comunitária
+    /// Chave da caixa postal comunitária
     /// </summary>
     public int CaixaPostalComunitariaId { get; set; }
 
     /// <summary>
-    /// número inicial da caixa postal comunitária
+    /// Número inicial da caixa postal comunitária
     /// </summary>
     public string CaixaPostalInicial { get; set; } = default!;
 
     /// <summary>
-    /// número final da caixa postal comunitária
+    /// Número final da caixa postal comunitária
     /// </summary>
     public string CaixaPostalFinal { get; set; } = default!;
 

@@ -13,17 +13,17 @@ namespace Correios.DneBasico.Domain.Entities;
 public class Localidade
 {
     /// <summary>
-    /// chave da localidade
+    /// Chave da localidade
     /// </summary>
     public int Id { get; set; }
 
     /// <summary>
-    /// sigla da UF
+    /// Sigla da UF
     /// </summary>
     public string Uf { get; set; } = default!;
 
     /// <summary>
-    /// nome da localidade
+    /// Nome da localidade
     /// </summary>
     public string Nome { get; set; } = default!;
 
@@ -33,7 +33,7 @@ public class Localidade
     public string? Cep { get; set; }
 
     /// <summary>
-    /// situação da localidade:
+    /// Situação da localidade:
     /// </summary>
     /// <remarks>
     /// 0 = Localidade não codificada em nível de Logradouro,
@@ -44,7 +44,7 @@ public class Localidade
     public SituacaoLocalidade Situacao { get; set; } = default!;
 
     /// <summary>
-    /// tipo de localidade
+    /// Tipo de localidade
     /// </summary>  
     /// <remarks>
     /// D - Distrito,
@@ -54,12 +54,12 @@ public class Localidade
     public TipoLocalidade Tipo { get; set; } = default!;
 
     /// <summary>
-    /// chave da localidade de subordinação (opcional)
+    /// Chave da localidade de subordinação (opcional)
     /// </summary>
-    public int? SubordinadaId { get; set; }
+    public int? SubordinacaoId { get; set; }
 
     /// <summary>
-    /// abreviatura do nome da localidade (opcional)
+    /// Abreviatura do nome da localidade (opcional)
     /// </summary>
     public string? NomeAbreviado { get; set; }
 
@@ -67,7 +67,6 @@ public class Localidade
     /// Código do município IBGE (opcional)
     /// </summary>
     public string? Ibge { get; set; }
-
 
     #region Navigation Properties
     /// <summary>
@@ -78,11 +77,16 @@ public class Localidade
     /// <summary>
     /// Localidade de subordinação
     /// </summary>
-    public Localidade? Subordinada { get; set; } = default!;
+    public Localidade? Subordinacao { get; set; } = default!;
 
     /// <summary>
     /// Variações da Localidade
     /// </summary>
     public ICollection<VariacaoLocalidade> Variacoes { get; set; } = [];
+
+    /// <summary>
+    /// Faixas de CEP da Localidade
+    /// </summary>
+    public ICollection<FaixaCepLocalidade> Faixas { get; set; } = [];
     #endregion
 }

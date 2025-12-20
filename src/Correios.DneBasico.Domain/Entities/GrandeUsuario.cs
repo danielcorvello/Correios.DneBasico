@@ -12,37 +12,37 @@
 public class GrandeUsuario
 {
     /// <summary>
-    /// chave do grande usuário
+    /// Chave do grande usuário
     /// </summary>
     public int Id { get; set; }
 
     /// <summary>
-    /// sigla da UF
+    /// Sigla da UF
     /// </summary>
     public string Uf { get; set; } = default!;
 
     /// <summary>
-    /// chave da localidade
+    /// Chave da localidade
     /// </summary>
     public int LocalidadeId { get; set; }
 
     /// <summary>
-    /// chave do bairro
+    /// Chave do bairro
     /// </summary>
     public int BairroId { get; set; }
 
     /// <summary>
-    /// chave do logradouro (opcional)
+    /// Chave do logradouro (opcional)
     /// </summary>
     public int? LogradouroId { get; set; }
 
     /// <summary>
-    /// nome do grande usuário
+    /// Nome do grande usuário
     /// </summary>
     public string Nome { get; set; } = default!;
 
     /// <summary>
-    /// endereço do grande usuário
+    /// Endereço do grande usuário
     /// </summary>
     public string Endereco { get; set; } = default!;
 
@@ -52,7 +52,7 @@ public class GrandeUsuario
     public string Cep { get; set; } = default!;
 
     /// <summary>
-    /// abreviatura do nome do grande usuário (opcional)
+    /// Abreviatura do nome do grande usuário (opcional)
     /// </summary>
     public string? NomeAbreviado { get; set; }
 
