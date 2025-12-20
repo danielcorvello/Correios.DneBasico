@@ -66,6 +66,7 @@ public class UnidadeOperacional
     /// Estado
     /// </summary>
     public Estado Estado { get; set; } = default!;
+
     /// <summary>
     /// Localidade
     /// </summary>

@@ -6,17 +6,13 @@ public class FaixaNumericaSeccionamentoConfiguration : IEntityTypeConfiguration<
     {
         builder.ToTable("faixas_numericas_seccionamento");
 
-        builder.HasKey(x => x.LogradouroId);
+        builder.HasKey(x => new { x.LogradouroId, x.SeccionamentoInicial, x.ParidadeLado });
 
         builder.Property(x => x.LogradouroId)
             .HasColumnName("log_nu")
             .ValueGeneratedNever()
             .IsRequired();
 
-        builder.HasOne(x => x.Logradouro)
-            .WithOne()
-            .HasForeignKey<FaixaNumericaSeccionamento>(x => x.LogradouroId)
-            .OnDelete(DeleteBehavior.Restrict);
 
         builder.Property(x => x.SeccionamentoInicial)
             .HasColumnName("sec_nu_ini")

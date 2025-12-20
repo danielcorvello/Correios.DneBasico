@@ -1,4 +1,5 @@
 ﻿using Correios.DneBasico.Domain.Enums;
+using System.Text.Json.Serialization;
 
 namespace Correios.DneBasico.Domain.Entities;
 
@@ -13,14 +14,9 @@ namespace Correios.DneBasico.Domain.Entities;
 public class FaixaCepLocalidade
 {
     /// <summary>
-    /// chave da localidade
+    /// Chave da localidade
     /// </summary>
     public int LocalidadeId { get; set; }
-
-    /// <summary>
-    /// Localidade
-    /// </summary>
-    public Localidade Localidade { get; set; } = default!;
 
     /// <summary>
     /// CEP inicial da localidade
@@ -33,7 +29,17 @@ public class FaixaCepLocalidade
     public string CepFinal { get; set; } = default!;
 
     /// <summary>
-    /// tipo de Faixa de CEP: T –Total do Município, C – Exclusiva da  Sede Urbana
+    /// Tipo de Faixa de CEP: 
+    /// T –Total do Município, 
+    /// C – Exclusiva da  Sede Urbana
     /// </summary>
     public TipoFaixaCep TipoFaixa { get; set; } = default!;
+
+    #region Navigation Properties
+    /// <summary>
+    /// Localidade
+    /// </summary>
+    [JsonIgnore]
+    public Localidade Localidade { get; set; } = default!;
+    #endregion
 }

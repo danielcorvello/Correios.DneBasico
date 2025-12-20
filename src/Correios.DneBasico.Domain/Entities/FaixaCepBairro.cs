@@ -1,4 +1,6 @@
-﻿namespace Correios.DneBasico.Domain.Entities;
+﻿using System.Text.Json.Serialization;
+
+namespace Correios.DneBasico.Domain.Entities;
 
 /// <summary>
 /// Faixa de CEP de Bairro
@@ -24,6 +26,7 @@ public class FaixaCepBairro
     /// <summary>
     /// Bairro
     /// </summary>
+    [JsonIgnore]
     public Bairro Bairro { get; set; } = default!;
     #endregion
 }

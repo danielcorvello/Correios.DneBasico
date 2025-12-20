@@ -7,27 +7,27 @@
 public class CaixaPostalComunitaria
 {
     /// <summary>
-    /// chave da caixa postal comunitária
+    /// Chave da caixa postal comunitária
     /// </summary>
     public int Id { get; set; }
 
     /// <summary>
-    /// sigla da UF
+    /// Sigla da UF
     /// </summary>
     public string Uf { get; set; } = default!;
 
     /// <summary>
-    /// chave da localidade
+    /// Chave da localidade
     /// </summary>
     public int LocalidadeId { get; set; }
 
     /// <summary>
-    /// nome da CPC
+    /// Nome da CPC
     /// </summary>
     public string Nome { get; set; } = default!;
 
     /// <summary>
-    /// endereço da CPC
+    /// Endereço da CPC
     /// </summary>
     public string Endereco { get; set; } = default!;
 

@@ -37,7 +37,7 @@ public class LocalidadeConfiguration : IEntityTypeConfiguration<Localidade>
         builder.Property(l => l.Tipo)
             .HasColumnName("loc_in_tipo_loc");
 
-        builder.Property(l => l.SubordinadaId)
+        builder.Property(l => l.SubordinacaoId)
             .HasColumnName("loc_nu_sub");
 
         builder.Property(l => l.NomeAbreviado)

@@ -61,8 +61,8 @@ public class EdneImporter
                     if (typeof(TEntity) == typeof(Localidade))
                     {
                         // Ordena os registros de Localidade por SubordinadaId = null primeiro, para evitar problemas de FK e depois por Id
-                        records = records.OrderBy(r => ((Localidade)(object)r).SubordinadaId.HasValue)
-                                                 .ThenBy(r => ((Localidade)(object)r).SubordinadaId)
+                        records = records.OrderBy(r => ((Localidade)(object)r).SubordinacaoId.HasValue)
+                                                 .ThenBy(r => ((Localidade)(object)r).SubordinacaoId)
                                                  .ThenBy(r => ((Localidade)(object)r).Id);
                     }
 

@@ -8,17 +8,17 @@ namespace Correios.DneBasico.Domain.Entities;
 public class FaixaNumericaSeccionamento
 {
     /// <summary>
-    /// chave do logradouro
+    /// Chave do logradouro
     /// </summary>
     public int LogradouroId { get; set; }
 
     /// <summary>
-    /// número inicial do seccionamento
+    /// Número inicial do seccionamento
     /// </summary>
     public string SeccionamentoInicial { get; set; } = default!;
 
     /// <summary>
-    /// número final do seccionamento
+    /// Número final do seccionamento
     /// </summary>
     public string SeccionamentoFinal { get; set; } = default!;
 
