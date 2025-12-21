@@ -30,9 +30,10 @@ public sealed class GetBairrosEndpoint : Endpoint<GetBairrosRequest, PagedRespon
 
         Summary(s =>
         {
-            s.Description = "Retorna uma lista paginada de bairros, com suporte a filtragem e ordenação.";
-            s.RequestParam(r => r.OrderBy, string.Format(ApiConstants.FILTER_SUMMARY, filterableFields));
-            s.RequestParam(r => r.Filter, string.Format(ApiConstants.ORDERBY_SUMMARY, orderableFields));
+            s.RequestParam(r => r.OrderBy,
+                string.Format(ApiConstants.FILTER_SUMMARY, filterableFields));
+            s.RequestParam(r => r.Filter,
+                string.Format(ApiConstants.ORDERBY_SUMMARY, orderableFields));
         });
     }
 
@@ -68,16 +69,25 @@ public sealed class GetBairrosEndpoint : Endpoint<GetBairrosRequest, PagedRespon
                 NomeAbreviado = c.NomeAbreviado,
                 LocalidadeId = c.LocalidadeId,
                 Localidade = c.Localidade.Nome,
-                Variacoes = c.Variacoes!.Select(v => v.Denominacao).ToList(),
-                FaixasCep = c.Faixas!.Select(f => new FaixaCepResponse(f.CepInicial, f.CepFinal)).ToList()
+                Variacoes = c.Variacoes!
+                                .Select(v => v.Denominacao)
+                                .ToList(),
+                FaixasCep = c.Faixas!
+                                .Select(f => new FaixaCepResponse(
+                                    f.CepInicial,
+                                    f.CepFinal))
+                                .ToList()
             });
 
         var totalCount = await query.CountAsync(ct);
 
-        query = query
-            .ApplyPaging(gridifyQuery);
+        query = query.ApplyPaging(gridifyQuery);
 
-        var result = await query.ToPagedResultAsync(totalCount, gridifyQuery.Page, gridifyQuery.PageSize, ct);
+        var result = await query.ToPagedResultAsync(
+            totalCount,
+            gridifyQuery.Page,
+            gridifyQuery.PageSize,
+            ct);
 
         await Send.OkAsync(result, cancellation: ct);
         return;
@@ -86,7 +96,6 @@ public sealed class GetBairrosEndpoint : Endpoint<GetBairrosRequest, PagedRespon
 
 public record GetBairrosRequest : QueryListRequest
 {
-
 }
 
 public class GetBairrosRequestValidator : Validator<GetBairrosRequest>
