@@ -1,0 +1,14 @@
+﻿global using Correios.DneBasico.Api.Constants;
+global using Correios.DneBasico.Api.Extensions;
+global using Correios.DneBasico.Api.Features._Shared;
+global using Correios.DneBasico.Api.Models;
+global using Correios.DneBasico.Data.Contexts;
+global using Correios.DneBasico.Domain.Entities;
+global using FastEndpoints;
+global using FastEndpoints.Swagger;
+global using FluentValidation;
+global using Gridify;
+global using Microsoft.EntityFrameworkCore;
+global using System.ComponentModel;
+global using System.Net;
+global using System.Net.Mime;

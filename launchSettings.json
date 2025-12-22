@@ -3,8 +3,11 @@
     "Docker Compose": {
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchUrl": "/swagger",
       "serviceActions": {
-        "correios.dnebasico.importer": "StartDebugging"
+        "correios.dnebasico.importer": "StartDebugging",
+        "correios.dnebasico.api": "StartDebugging"
       }
     }
   }

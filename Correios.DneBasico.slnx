@@ -3,6 +3,7 @@
     <File Path=".gitignore" />
   </Folder>
   <Folder Name="/src/">
+    <Project Path="src/Correios.DneBasico.Api/Correios.DneBasico.Api.csproj" Id="fa54f434-e395-4f2e-b803-8aa8f0f8d952" />
     <Project Path="src/Correios.DneBasico.Data/Correios.DneBasico.Data.csproj" />
     <Project Path="src/Correios.DneBasico.Domain/Correios.DneBasico.Domain.csproj" />
     <Project Path="src/Correios.DneBasico.Importer/Correios.DneBasico.Importer.csproj" />
