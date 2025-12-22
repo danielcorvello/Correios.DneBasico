@@ -18,6 +18,7 @@ public static class ApiConstants
         public const string UNIDADES_OPERACIONAIS = "unidades-operacionais";
         public const string CAIXAS_POSTAIS_COMUNITARIAS = "caixas-postais-comunitarias";
         public const string GRANDES_USUARIOS = "grandes-usuarios";
+        public const string PAISES = "paises";
     }
 
     public const string FILTER_SUMMARY = "Filtro para busca. Campos permitidos: {0}";

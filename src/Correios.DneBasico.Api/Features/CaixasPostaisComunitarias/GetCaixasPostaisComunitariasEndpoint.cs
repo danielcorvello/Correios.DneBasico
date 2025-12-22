@@ -158,8 +158,10 @@ class GetCaixasPostaisComunitariasRequestMapper : GridifyMapper<CaixaPostalComun
 
         AddMap(nameof(GetCaixasPostaisComunitariasResponse.Id), o => o.Id);
         AddMap(nameof(GetCaixasPostaisComunitariasResponse.Nome), o => o.Nome);
-        AddMap(nameof(GetCaixasPostaisComunitariasResponse.Uf), o => o.Uf);
+        AddMap(nameof(GetCaixasPostaisComunitariasResponse.Endereco), o => o.Endereco);
         AddMap(nameof(GetCaixasPostaisComunitariasResponse.Cep), o => o.Cep);
+        AddMap(nameof(GetCaixasPostaisComunitariasResponse.Localidade), o => o.Localidade.Nome);
+        AddMap(nameof(GetCaixasPostaisComunitariasResponse.Uf), o => o.Uf);
         AddMap(nameof(GetCaixasPostaisComunitariasResponse.LocalidadeId), o => o.LocalidadeId);
     }
 }

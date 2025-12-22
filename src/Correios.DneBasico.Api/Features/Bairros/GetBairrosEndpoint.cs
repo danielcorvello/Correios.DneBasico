@@ -107,7 +107,7 @@ public class GetBairrosRequestValidator : Validator<GetBairrosRequest>
 }
 
 /// <summary>
-/// Response para retornar as bairros.
+/// Response para retornar os bairros.
 /// </summary>
 public record GetBairrosResponse
 {
@@ -160,7 +160,9 @@ class GetBairrosRequestMapper : GridifyMapper<Bairro>
 
         AddMap(nameof(GetBairrosResponse.Id), o => o.Id);
         AddMap(nameof(GetBairrosResponse.Nome), o => o.Nome);
+        AddMap(nameof(GetBairrosResponse.NomeAbreviado), o => o.NomeAbreviado);
         AddMap(nameof(GetBairrosResponse.Uf), o => o.Uf);
+        AddMap(nameof(GetBairrosResponse.Localidade), o => o.Localidade.Nome);
         AddMap(nameof(GetBairrosResponse.LocalidadeId), o => o.LocalidadeId);
     }
 }

@@ -12,37 +12,37 @@
 public class UnidadeOperacional
 {
     /// <summary>
-    /// chave da UOP
+    /// Chave da UOP
     /// </summary>
     public int Id { get; set; }
 
     /// <summary>
-    /// sigla da UF
+    /// Sigla da UF
     /// </summary>
     public string Uf { get; set; } = default!;
 
     /// <summary>
-    /// chave da localidade
+    /// Chave da localidade
     /// </summary>
     public int LocalidadeId { get; set; }
 
     /// <summary>
-    /// chave do bairro
+    /// Chave do bairro
     /// </summary>
     public int BairroId { get; set; }
 
     /// <summary>
-    /// chave do logradouro (opcional)
+    /// Chave do logradouro (opcional)
     /// </summary>
     public int? LogradouroId { get; set; }
 
     /// <summary>
-    /// nome da UOP
+    /// Nome da UOP
     /// </summary>
     public string Nome { get; set; } = default!;
 
     /// <summary>
-    /// endereço da UOP
+    /// Endereço da UOP
     /// </summary>
     public string Endereco { get; set; } = default!;
 
@@ -52,12 +52,12 @@ public class UnidadeOperacional
     public string Cep { get; set; } = default!;
 
     /// <summary>
-    /// indicador de caixa postal (S ou N)
+    /// Indicador de caixa postal (S ou N)
     /// </summary>
     public string CaixasPostais { get; set; } = default!;
 
     /// <summary>
-    /// abreviatura do nome da unid. operacional (opcional)
+    /// Abreviatura do nome da unid. operacional (opcional)
     /// </summary>
     public string? NomeAbreviado { get; set; }
 
