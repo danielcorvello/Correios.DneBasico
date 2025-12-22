@@ -15,7 +15,7 @@ public class GetCepEndpoint : Endpoint<GetCepRequest, GetCepResponse>
 
     public override void Configure()
     {
-        Get($"/{ApiConstants.RouteNames.CEPS}/{{Cep}}");
+        Get($"/{ApiConstants.RouteNames.CEPS}/{{cep:length(8,9)}}");
         AllowAnonymous();
 
         Description(b => b
@@ -52,8 +52,10 @@ public class GetCepEndpoint : Endpoint<GetCepRequest, GetCepResponse>
 
     public override async Task HandleAsync(GetCepRequest req, CancellationToken ct)
     {
+        var cepNormalizado = req.Cep.Replace("-", "").Trim();
+
         var cep = await _dbContext.Ceps
-            .Where(c => c.Codigo == req.Cep)
+            .Where(c => c.Codigo == cepNormalizado)
             .FirstOrDefaultAsync(ct);
 
         if (cep is not null)
@@ -92,7 +94,7 @@ public class GetCepRequestValidator : Validator<GetCepRequest>
     {
         RuleFor(x => x.Cep)
             .NotEmpty().WithMessage("O CEP é obrigatório.")
-            .Matches(@"^\d{8}$").WithMessage("O CEP deve conter exatamente 8 dígitos numéricos.");
+            .Matches(@"^\d{5}\-?\d{3}$").WithMessage("Cep inválido");
     }
 }
 public record GetCepResponse(
