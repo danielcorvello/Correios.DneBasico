@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Correios.DneBasico.Api.Features._Shared;
+﻿namespace Correios.DneBasico.Api.Features._Shared;
 
 public record QueryListRequest
 {

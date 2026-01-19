@@ -77,3 +77,5 @@ app.UseFastEndpoints(c =>
 app.UseHttpsRedirection();
 
 app.Run();
+
+public partial class Program { } // Necessário para testes de integração
