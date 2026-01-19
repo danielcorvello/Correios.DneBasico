@@ -1,6 +1,5 @@
 ﻿using Correios.DneBasico.Data.Contexts;
 using Correios.DneBasico.Importer;
-using Correios.DneBasico.Importer.Mappings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,23 +42,7 @@ using (var scope = serviceProvider.CreateScope())
 var watch = Stopwatch.StartNew();
 
 var edne = new EdneImporter(serviceProvider);
-edne.ImportarArquivoCsv<Pais, PaisMap>("ECT_PAIS.TXT");
-edne.ImportarArquivoCsv<FaixaCepEstado, FaixaCepEstadoMap>("LOG_FAIXA_UF.TXT");
-edne.ImportarArquivoCsv<Localidade, LocalidadeMap>("LOG_LOCALIDADE.TXT");
-edne.ImportarArquivoCsv<VariacaoLocalidade, VariacaoLocalidadeMap>("LOG_VAR_LOC.TXT");
-edne.ImportarArquivoCsv<FaixaCepLocalidade, FaixaCepLocalidadeMap>("LOG_FAIXA_LOCALIDADE.TXT");
-edne.ImportarArquivoCsv<Bairro, BairroMap>("LOG_BAIRRO.TXT");
-edne.ImportarArquivoCsv<VariacaoBairro, VariacaoBairroMap>("LOG_VAR_BAI.TXT");
-edne.ImportarArquivoCsv<FaixaCepBairro, FaixaCepBairroMap>("LOG_FAIXA_BAIRRO.TXT");
-edne.ImportarArquivoCsv<CaixaPostalComunitaria, CaixaPostalComunitariaMap>("LOG_CPC.TXT");
-edne.ImportarArquivoCsv<FaixaCaixaPostalComunitaria, FaixaCaixaPostalComunitariaMap>("LOG_FAIXA_CPC.TXT");
-edne.ImportarArquivoCsv<Logradouro, LogradouroMap>("LOG_LOGRADOURO_**.TXT");
-edne.ImportarArquivoCsv<FaixaNumericaSeccionamento, FaixaNumericaSeccionamentoMap>("LOG_NUM_SEC.TXT");
-edne.ImportarArquivoCsv<GrandeUsuario, GrandeUsuarioMap>("LOG_GRANDE_USUARIO.TXT");
-edne.ImportarArquivoCsv<UnidadeOperacional, UnidadeOperacionalMap>("LOG_UNID_OPER.TXT");
-edne.ImportarArquivoCsv<FaixaCaixaPostalUop, FaixaCaixaPostalUopMap>("LOG_FAIXA_UOP.TXT");
-
-await edne.PovoarTabelaUnificadaAsync();
+await edne.ImportarTudoAsync();
 
 watch.Stop();
 

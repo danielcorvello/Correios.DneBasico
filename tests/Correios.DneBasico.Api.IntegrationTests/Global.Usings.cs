@@ -1,0 +1,9 @@
+﻿global using Correios.DneBasico.Api.Constants;
+global using Correios.DneBasico.Api.IntegrationTests.Setup;
+global using Correios.DneBasico.Api.Models;
+global using FastEndpoints;
+global using FastEndpoints.Testing;
+global using Shouldly;
+global using System.Net;
+global using System.Net.Http.Json;
+global using System.Text;

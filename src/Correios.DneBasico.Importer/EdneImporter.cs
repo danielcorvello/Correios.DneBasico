@@ -1,4 +1,5 @@
 ﻿using Correios.DneBasico.Data.Contexts;
+using Correios.DneBasico.Importer.Mappings;
 using EFCore.BulkExtensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -232,5 +233,26 @@ public class EdneImporter
                                 t.Milliseconds);
 
         Console.WriteLine($"Tempo de execução: {answer}");
+    }
+
+    public async Task ImportarTudoAsync()
+    {
+        ImportarArquivoCsv<Pais, PaisMap>("ECT_PAIS.TXT");
+        ImportarArquivoCsv<FaixaCepEstado, FaixaCepEstadoMap>("LOG_FAIXA_UF.TXT");
+        ImportarArquivoCsv<Localidade, LocalidadeMap>("LOG_LOCALIDADE.TXT");
+        ImportarArquivoCsv<VariacaoLocalidade, VariacaoLocalidadeMap>("LOG_VAR_LOC.TXT");
+        ImportarArquivoCsv<FaixaCepLocalidade, FaixaCepLocalidadeMap>("LOG_FAIXA_LOCALIDADE.TXT");
+        ImportarArquivoCsv<Bairro, BairroMap>("LOG_BAIRRO.TXT");
+        ImportarArquivoCsv<VariacaoBairro, VariacaoBairroMap>("LOG_VAR_BAI.TXT");
+        ImportarArquivoCsv<FaixaCepBairro, FaixaCepBairroMap>("LOG_FAIXA_BAIRRO.TXT");
+        ImportarArquivoCsv<CaixaPostalComunitaria, CaixaPostalComunitariaMap>("LOG_CPC.TXT");
+        ImportarArquivoCsv<FaixaCaixaPostalComunitaria, FaixaCaixaPostalComunitariaMap>("LOG_FAIXA_CPC.TXT");
+        ImportarArquivoCsv<Logradouro, LogradouroMap>("LOG_LOGRADOURO_**.TXT");
+        ImportarArquivoCsv<FaixaNumericaSeccionamento, FaixaNumericaSeccionamentoMap>("LOG_NUM_SEC.TXT");
+        ImportarArquivoCsv<GrandeUsuario, GrandeUsuarioMap>("LOG_GRANDE_USUARIO.TXT");
+        ImportarArquivoCsv<UnidadeOperacional, UnidadeOperacionalMap>("LOG_UNID_OPER.TXT");
+        ImportarArquivoCsv<FaixaCaixaPostalUop, FaixaCaixaPostalUopMap>("LOG_FAIXA_UOP.TXT");
+
+        await PovoarTabelaUnificadaAsync();
     }
 }

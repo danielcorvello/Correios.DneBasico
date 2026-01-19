@@ -19,6 +19,11 @@ public static class ApiConstants
         public const string CAIXAS_POSTAIS_COMUNITARIAS = "caixas-postais-comunitarias";
         public const string GRANDES_USUARIOS = "grandes-usuarios";
         public const string PAISES = "paises";
+
+        public const string PAGE_SIZE_QUERY = "pageSize";
+        public const string PAGE_NUMBER_QUERY = "pageNumber";
+        public const string FILTER_QUERY = "filter";
+        public const string ORDERBY_QUERY = "orderBy";
     }
 
     public const string FILTER_SUMMARY = "Filtro para busca. Campos permitidos: {0}";
